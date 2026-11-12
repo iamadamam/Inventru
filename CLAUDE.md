@@ -31,7 +31,8 @@ Ask before big or hard-to-undo changes; otherwise just get on with it.
    match), and add an entry at the top of CHANGELOG.md written for the user (what changed for them, not how).
 4. Run `npm run dist` before handing over any build. It runs the icon, all tests, the app installer build, the server
    build, checks on the finished programs and makes `dist/Inventru-<version>.zip`. Only hand over a zip if it passes.
-5. Commit with Git and tag releases as `v<version>` (e.g. `v1.0.1`).
+5. Commit with Git and tag releases as `v<version>` (e.g. `v1.0.1`), then push the commit and tags to the private
+   GitHub repository (`origin`, https://github.com/iamadamam/Inventru) - it is the off-PC backup. Keep it private.
 
 ## Upkeep
 

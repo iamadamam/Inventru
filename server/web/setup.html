@@ -1,0 +1,61 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Inventru server</title>
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="/setup.css">
+</head>
+<body>
+  <main>
+    <header>
+      <div class="ok-badge">&#9679;</div>
+      <div>
+        <h1>Inventru server is running</h1>
+        <p class="muted">It starts by itself with Windows. Nothing else to do on this computer.</p>
+      </div>
+    </header>
+    {{MSG}}
+    {{WARN}}
+
+    <section class="step">
+      <div class="num">1</div>
+      <div class="body">
+        <h2>The TV</h2>
+        <p>Open this address in the TV's web browser (or on any PC):</p>
+        <p class="big"><a id="tvUrl" href="{{TV_URL}}" target="_blank" rel="noopener">{{TV_URL}}</a> <button id="copyTv" class="btn" hidden>Copy</button></p>
+        <p class="muted small">{{ALT_URLS}}</p>
+      </div>
+    </section>
+
+    <section class="step">
+      <div class="num">2</div>
+      <div class="body">
+        <h2>The store-room PC</h2>
+        <p>Install the Inventru app. When it starts, type in:</p>
+        <div class="pair">
+          <div><span class="lbl">Server</span><b>{{APP_ADDRESS}}</b></div>
+          <div><span class="lbl">Pairing code</span><b class="code">{{CODE}}</b></div>
+        </div>
+        <p class="muted small">{{CODE_INFO}} Need a code for another PC? {{NEW_CODE_FORM}}</p>
+        <h3>Paired PCs</h3>
+        <ul class="devices">{{DEVICES}}</ul>
+      </div>
+    </section>
+
+    <section class="step">
+      <div class="num">3</div>
+      <div class="body">
+        <h2>Stock data</h2>
+        <p>{{ITEMS}} &middot; <a href="/api/export.csv">Download a backup (CSV, opens in Excel)</a></p>
+        <p id="importRow" hidden><label class="btn">Import from CSV&hellip;<input type="file" id="importFile" accept=".csv,text/csv" hidden></label> <span id="importMsg" class="muted"></span></p>
+        <div class="row">Name shown on the TV dashboard: {{NAME_FORM}}</div>
+      </div>
+    </section>
+
+    <footer class="muted small">{{FOOTER}}</footer>
+  </main>
+  <script src="/setup.js"></script>
+</body>
+</html>

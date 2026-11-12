@@ -1,0 +1,30 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Inventru - stock dashboard</title>
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="/dashboard.css">
+</head>
+<body>
+  <header>
+    <div class="brand">
+      <div id="title">Inventru</div>
+      <div class="sub">Live stock dashboard</div>
+    </div>
+    <div class="kpis" id="kpis"></div>
+    <div class="right">
+      <div id="clock">--:--</div>
+      <div id="status" data-state="connecting"><span class="dot"></span><span class="txt">Connecting…</span></div>
+    </div>
+  </header>
+  <main id="main">
+    <section class="panel" id="p-attn"><h2><span class="hi warn"></span>Needs attention <small id="attn-n"></small></h2><div class="body" id="attn"></div></section>
+    <section class="panel" id="p-cats"><h2><span class="hi"></span>Stock by category</h2><div class="body" id="cats"></div></section>
+    <section class="panel" id="p-order"><h2><span class="hi ok"></span>On order <small id="order-n"></small></h2><div class="body" id="order"></div></section>
+  </main>
+  <script src="/icons.js"></script>
+  <script src="/dashboard.js"></script>
+</body>
+</html>

@@ -1,0 +1,5 @@
+# Keep files exactly as they are (LF line endings); images and icons are binary.
+* text=auto eol=lf
+*.ico binary
+*.png binary
+*.csv text eol=crlf

@@ -1,0 +1,44 @@
+<!doctype html>
+<html lang="en" data-theme="dark" data-density="comfortable">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="Content-Security-Policy" content="default-src 'none'; script-src 'self'; style-src 'self' 'unsafe-inline'; img-src 'self' data:; connect-src 'none'; form-action 'none'; base-uri 'none'">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+  <title>Inventru</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div id="app">
+    <header class="topbar">
+      <div class="list-btn static" title="The stock list on your Inventru server"><span id="listIcon" class="i"></span><span id="listName">Inventru</span></div>
+      <label class="search"><span id="searchIcon" class="mag"></span><input id="search" type="search" placeholder="Search…   ( / )" autocomplete="off" spellcheck="false" aria-label="Search"></label>
+      <div class="spacer"></div>
+      <button id="dashBtn" class="pill-btn" title="Open the TV dashboard in your browser" hidden><span class="t">Dashboard</span></button>
+      <button id="exportBtn" class="icon-btn" title="Export to CSV / Excel (Ctrl+S)" aria-label="Export"></button>
+      <button id="editBtn" class="pill-btn" title="Edit items (Ctrl+E)" aria-pressed="false"><span class="t">Edit</span></button>
+      <button id="helpBtn" class="icon-btn" title="Keyboard shortcuts (?)" aria-label="Keyboard shortcuts"></button>
+      <button id="sync" class="sync" data-state="ok" aria-live="polite" title="Click to sync now"><span class="dot"></span><span class="label">Connecting…</span></button>
+      <button id="gear" class="icon-btn" title="Settings (Ctrl+,)" aria-label="Settings"></button>
+    </header>
+    <nav id="groups" class="groups" aria-label="Categories"></nav>
+    <nav id="subgroups" class="groups subgroups" aria-label="Subcategories"></nav>
+    <div id="editbar" class="editbar" hidden></div>
+    <main id="list" class="list" tabindex="0" aria-label="Stock list">
+      <div class="head-row" role="row">
+        <div>Item</div><div class="r">Quantity</div><div class="c">Add</div><div class="c">Remove</div><div class="c">Ordered</div>
+      </div>
+      <div id="rows"></div>
+      <div id="empty" class="empty" hidden></div>
+    </main>
+    <footer class="foot"><span id="totals"></span><span id="hints" class="hints"></span></footer>
+  </div>
+  <section id="connect" class="connect" hidden></section>
+  <section id="settings" class="settings" hidden></section>
+  <div id="modal-root"></div>
+  <div id="toast" class="toast" role="status"></div>
+  <script src="icons.js"></script>
+  <script src="app.js"></script>
+  <script src="dnd.js"></script>
+  <script src="settings.js"></script>
+</body>
+</html>

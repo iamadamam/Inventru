@@ -1,0 +1,8 @@
+Item,Category,Subcategory,Quantity,Ordered,Warn at
+Wireless mouse,Mice,,10,No,3
+Wired keyboard,Keyboards,,6,No,2
+"24"" monitor",Monitors,New,4,No,1
+"27"" monitor",Monitors,Used,2,No,
+"Laptop 14""",Laptops,New,3,Yes,1
+USB-C dock,Docks & cables,Docks,5,No,2
+HDMI cable 2m,Docks & cables,Cables,20,No,5

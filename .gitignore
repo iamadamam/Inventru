@@ -1,0 +1,5 @@
+node_modules/
+dist/
+dist-server/
+server-data/
+*.corrupt-*

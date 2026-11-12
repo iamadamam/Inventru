@@ -1,0 +1,68 @@
+{
+  "name": "inventrustock-app",
+  "productName": "Inventru",
+  "version": "1.0.0",
+  "description": "Inventru",
+  "main": "src/main/main.js",
+  "author": "Inventru",
+  "copyright": "Copyright © 2026 Inventru",
+  "license": "MIT",
+  "private": true,
+  "scripts": {
+    "start": "electron .",
+    "start:demo": "electron . --demo",
+    "server": "node server/cli.js --run --data ./server-data",
+    "test": "node --test --test-timeout=20000 \"test/*.test.js\"",
+    "test:e2e": "node scripts/e2e.js",
+    "test:e2e-server": "node scripts/e2e-server.js",
+    "test:e2e-local": "node scripts/e2e-local.js",
+    "test:browser": "node scripts/e2e-browser.js",
+    "test:all": "npm test && npm run test:e2e && npm run test:e2e-server && npm run test:e2e-local && npm run test:browser",
+    "test:release": "node scripts/test-release.js",
+    "icon": "node scripts/make-icon.js",
+    "build:server": "node scripts/build-server.js",
+    "dist": "npm run icon && npm run test:all && electron-builder --win nsis && npm run build:server && npm run test:release && npm run package",
+    "package": "node scripts/package.js"
+  },
+  "devDependencies": {
+    "electron": "45.2.3",
+    "electron-builder": "26.18.1"
+  },
+  "build": {
+    "appId": "com.inventru.app",
+    "productName": "Inventru",
+    "executableName": "Inventru",
+    "directories": {
+      "output": "dist",
+      "buildResources": "build"
+    },
+    "files": [
+      "src/**/*",
+      "package.json"
+    ],
+    "extraResources": [
+      {
+        "from": "LICENSE",
+        "to": "LICENSE"
+      }
+    ],
+    "afterPack": "scripts/after-pack.js",
+    "win": {
+      "target": [
+        "nsis"
+      ],
+      "icon": "build/icon.ico"
+    },
+    "nsis": {
+      "oneClick": true,
+      "perMachine": false,
+      "runAfterFinish": true,
+      "deleteAppDataOnUninstall": false,
+      "include": "build/installer.nsh",
+      "packElevateHelper": false,
+      "artifactName": "Inventru-Setup-${version}.exe",
+      "shortcutName": "Inventru",
+      "uninstallDisplayName": "Inventru"
+    }
+  }
+}
